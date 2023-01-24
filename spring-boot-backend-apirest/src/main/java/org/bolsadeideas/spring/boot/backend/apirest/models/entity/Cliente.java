@@ -1,6 +1,7 @@
 package org.bolsadeideas.spring.boot.backend.apirest.models.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotEmpty;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -11,7 +12,7 @@ public class Cliente implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(nullable = false) //no puede ser nulo en la base de datos
+    @NotEmpty //no puede ser nulo en la base de datos
     private String nombre;
     private String apellido;
     @Column(nullable = false, unique = true)
